@@ -1,0 +1,49 @@
+﻿@model NitinChandraMVC.Models.Books
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<style>
+    .fnt {
+        font-size: 20px;
+        padding: 3px;
+    }
+</style>
+
+
+<div class="card" style="width:60rem;">
+    <div class="card-body">
+        <div>
+            <br />
+            <dl class="dl-horizontal fnt">
+                <dt>
+                    Book Name:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Book_Name)
+                </dd>
+                <dt>
+                    Author:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Author_Name)
+                </dd>
+                <dt>
+                    Price:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Book_Price)
+                </dd>
+            </dl>
+            <p style="font-size: 20px;" class="text-center">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.BookId })
+                <br />
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+
+        </div>
+    </div>
+</div>
+

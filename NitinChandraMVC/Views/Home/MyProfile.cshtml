@@ -1,0 +1,18 @@
+﻿@model NitinChandraMVC.Models.UserModel
+
+
+@{
+    ViewBag.Title = "MyProfile";
+}
+
+
+
+
+<div class="card">
+    <div class="text-center">
+        <h1>@TempData["items"]</h1>
+
+        @Html.DisplayFor(model => model.Name);
+    </div>
+</div>
+

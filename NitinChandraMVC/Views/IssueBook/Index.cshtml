@@ -1,0 +1,83 @@
+﻿@*@model IEnumerable<NitinChandraMVC.Models.IssueBooks>*@
+
+@model NitinChandraMVC.Models.IssueBooks
+
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<h2 class="text-center">Issue Books</h2>
+
+<style>
+    .clr {
+        color: red;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    form label {
+        font-size: 15px;
+    }
+
+    input[type=text] {
+        font-size: 15px;
+    }
+
+    input[type=date] {
+        font-size: 15px;
+    }
+
+    input[type=submit] {
+        font-size: 15px;
+    }
+
+    h2 {
+        font-size: 50px;
+    }
+</style>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <form method="post" action="/IssueBook/Index">
+
+                <div class="form-group">
+                    <label>Student Id:</label>
+                    @Html.TextBoxFor(model => model.StdId, new { @class = "form-control", @placeholder = "Enter Your Id" })
+                    @Html.ValidationMessageFor(model => model.StdId, "", new { @class = "clr" })
+                </div>
+                <div class="form-group">
+                    <label>Student Name:</label>
+                    @Html.TextBoxFor(model => model.StdName, new { @class = "form-control", @placeholder = "Enter Your Name" })
+                    @Html.ValidationMessageFor(model => model.StdName, "", new { @class = "clr" })
+                </div>
+                <div class="form-group">
+                    <label>Issue Date:</label>
+                    <input type="date" id="IssueDate" name="IssueDate" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.IssueDate, "", new { @class = "clr" })
+                </div>
+                <div class="form-group">
+                    <label>Return Date:</label>
+                    <input type="date" id="ReturnDate" name="ReturnDate" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.ReturnDate, "", new { @class = "clr" })
+                </div>
+                <div>
+                    <input type="submit" value="Issue Books" class="btn btn-success" />
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/jqueryval")

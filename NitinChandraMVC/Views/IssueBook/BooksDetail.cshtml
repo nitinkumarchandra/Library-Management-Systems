@@ -1,0 +1,57 @@
+﻿@model NitinChandraMVC.Models.IssueBooks
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<style>
+    .fnt {
+        font-size: 20px;
+        padding: 3px;
+    }
+</style>
+
+
+<div class="card" style="width:60rem;">
+    <div class="card-body">
+        <div>
+            <br />
+            <dl class="dl-horizontal fnt">
+                <dt>
+                    Student Id:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.StdId)
+                </dd>
+                <dt>
+                    Student Name:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.StdName)
+                </dd>
+                <dt>
+                    Issue Date:
+                </dt>
+                <dt>
+                    Return Date:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IssueDate)
+                </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.ReturnDate)
+                </dd>
+
+            </dl>
+            @*<p style="font-size: 20px;" class="text-center">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+                <br />
+                @Html.ActionLink("Back to List", "Index")
+            </p>*@
+
+        </div>
+    </div>
+</div>
+

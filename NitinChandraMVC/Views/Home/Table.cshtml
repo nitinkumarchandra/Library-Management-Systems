@@ -1,0 +1,59 @@
+﻿@model IEnumerable<NitinChandraMVC.Models.Books>
+
+@{
+    ViewBag.Title = "Table";
+}
+
+<h2 class="text-center">Books</h2>
+
+<br />
+
+<div class="text-center">
+    <a class="btn btn-primary" href="@Url.Action("NewBooks","Home")">Add New Books</a>
+</div>
+
+<p>
+</p>
+<table class="table table-bordered table-responsive">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+           Book Name
+        </th>
+
+        <th>
+            Author Name
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Functionality
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Book_Name)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Author_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Book_Price)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit","Home", new { item.BookId})" class="btn btn-primary">Edit</a>
+            <a href="@Url.Action("Edit","Home", new {item.BookId })" class="btn btn-primary">Delete</a>
+        </td>
+    </tr>
+}
+
+</table>
